@@ -3,9 +3,10 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-tokenizer = AutoTokenizer.from_pretrained("saved_model")
-model = AutoModelForSequenceClassification.from_pretrained("saved_model")
+MODEL_NAME = "GunjanKumar96740/fake-news-detection-bert"
 
+tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
+model = AutoModelForSequenceClassification.from_pretrained(MODEL_NAME)
 model.to(device)
 model.eval()
 
